@@ -35,7 +35,7 @@ st.markdown("""
     .sidebar-container {
         width: 220px;
         background-color: #ffffff;
-        padding: 20px 0;
+        padding: 0; /* Remove top padding */
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.08);
         flex-shrink: 0;
@@ -52,21 +52,20 @@ st.markdown("""
     }
     .sidebar-menu a {
         text-decoration: none;
-        color: #333; /* Darker color for better visibility */
+        color: #333;
         display: flex;
         align-items: center;
         padding: 12px 20px;
         transition: background-color 0.2s ease, color 0.2s ease;
         font-size: 15px;
-        font-weight: 500; /* Default font weight, will be overridden for specific items if needed */
+        font-weight: 500;
     }
-    /* Specific styling for Explore and Create Campaign to make them bold */
-    .sidebar-menu a:not(.active) { /* Apply to non-active links */
-        font-weight: bold; /* Make non-active items bold */
+    .sidebar-menu a:not(.active) {
+        font-weight: bold;
     }
     .sidebar-menu a i {
         margin-right: 10px;
-        color: #555; /* Darker icon color */
+        color: #555;
     }
     .sidebar-menu a:hover {
         background-color: #e6e9ed;
@@ -75,7 +74,7 @@ st.markdown("""
     .sidebar-menu a.active {
         background-color: #e0e6f0;
         color: #1a1a1a;
-        font-weight: bold; /* Keep active item bold as it was */
+        font-weight: bold;
         position: relative;
     }
     .sidebar-menu a.active::before {
@@ -85,7 +84,7 @@ st.markdown("""
         top: 0;
         bottom: 0;
         width: 4px;
-        background-color: #6a0dad;
+        background-color: #F5F5DC;
         border-top-right-radius: 2px;
         border-bottom-right-radius: 2px;
     }
@@ -281,7 +280,7 @@ st.markdown("""
     }
     .campaign-progress-fill {
         height: 100%;
-        background-color: #6a0dad;
+        background-color: #F5F5DC;
         border-radius: 5px;
     }
     .campaign-stats {
@@ -304,8 +303,9 @@ st.markdown("""
         }
         .sidebar-container {
             width: 100%;
-            padding: 10px 0;
+            padding: 0;
             margin-bottom: 20px;
+            order: 2; /* Moves sidebar to bottom */
         }
         .sidebar-menu ul {
             display: flex;
@@ -324,6 +324,7 @@ st.markdown("""
         }
         .content-area-container {
             padding-right: 0;
+            order: 1; /* Keeps content first */
         }
         .top-content-area {
             padding: 20px;
@@ -381,10 +382,10 @@ with st.container():
         st.markdown("""
             <div class="top-content-area">
                 <div class="main-logo-text">HAVEN</div>
-                <p class="main-logo-subtitle">Support the most popular projects on HAVEN.</p>
+                <p class="main-logo-subtitle">Support the projects on HAVEN.</p>
         """, unsafe_allow_html=True)
 
-        st.text_input("", placeholder="Search campaigns", key="search_bar")
+        st.text_input("Search", placeholder="Search campaigns", key="search_bar", label_visibility="hidden")
         st.markdown("</div>", unsafe_allow_html=True)
 
         st.markdown("""
