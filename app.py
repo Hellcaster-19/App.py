@@ -390,16 +390,16 @@ with st.container():
         st.markdown("""
             <div class="campaigns-section">
                 <h2>Trending Campaigns</h2>
-                <p class="section-subtitle">Support the most popular projects on HAVEN.</p>
+                <p class="section-subtitle">Support the projects on HAVEN.</p>
                 <div class="campaign-grid">
         """, unsafe_allow_html=True)
 
         campaign_data = [
-            {"name": "EcoDrone: AI for Reforestation", "description": "Help us build AI-powered drones that plant trees and monitor forest health. Revolutionizing conservation efforts.", "author": "By GreenFuture Now", "funded": 25000, "goal": 50000, "days_left": 15},
-            {"name": "Echoes of Tomorrow - Indie Sci-Fi Film", "description": "Support our ambitious independent science fiction film exploring themes of memory and identity in a dystopian future.", "author": "By Nova Pictures", "funded": 75000, "goal": 100000, "days_left": 30},
-            {"name": "The Art Hive: Community Art Space", "description": "We are creating a vibrant, accessible art studio and gallery space for everyone in our community.", "author": "By Local Artists Collective", "funded": 10000, "goal": 20000, "days_left": 7},
-            {"name": "Melody Weaver - Debut Album", "description": "Help me record and release my debut folk-pop album, filled with heartfelt stories and enchanting melodies.", "author": "By Seraphina Moon", "funded": 3000, "goal": 18000, "days_left": 60},
-            {"name": "ReThread: Sustainable Fashion Line", "description": "Launching a new line of clothing made entirely from recycled materials and ethical practices.", "author": "By EarthWear Designs", "funded": 5000, "goal": 15000, "days_left": 20},
+            {"name": "ABC", "description": "CAMPAIGN DESCRIPTION", "author": "By XYZ", "funded": 1000, "goal": 50000, "days_left": 15},
+            {"name": "ABC", "description": "CAMPAIGN DESCRIPTION", "author": "By XYZ", "funded": 1000, "goal": 10000, "days_left": 30},
+            {"name": "ABC", "description": "CAMPAIGN DESCRIPTION", "author": "By XYZ", "funded": 1000, "goal": 20000, "days_left": 7},
+            {"name": "ABC", "description": "CAMPAIGN DESCRIPTION", "author": "By XYZ", "funded": 1000, "goal": 18000, "days_left": 60},
+            {"name": "ABC", "description": "CAMPAIGN DESCRIPTION", "author": "By XYZ", "funded": 1000, "goal": 15000, "days_left": 20},
         ]
 
         for campaign in campaign_data:
