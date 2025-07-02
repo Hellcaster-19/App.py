@@ -35,7 +35,7 @@ st.markdown("""
     .sidebar-container {
         width: 220px;
         background-color: #ffffff;
-        padding: 0; /* Remove top padding */
+        padding: 20px 0;
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.08);
         flex-shrink: 0;
@@ -52,20 +52,21 @@ st.markdown("""
     }
     .sidebar-menu a {
         text-decoration: none;
-        color: #333;
+        color: #333; /* Darker color for better visibility */
         display: flex;
         align-items: center;
         padding: 12px 20px;
         transition: background-color 0.2s ease, color 0.2s ease;
         font-size: 15px;
-        font-weight: 500;
+        font-weight: 500; /* Default font weight, will be overridden for specific items if needed */
     }
-    .sidebar-menu a:not(.active) {
-        font-weight: bold;
+    /* Specific styling for Explore and Create Campaign to make them bold */
+    .sidebar-menu a:not(.active) { /* Apply to non-active links */
+        font-weight: bold; /* Make non-active items bold */
     }
     .sidebar-menu a i {
         margin-right: 10px;
-        color: #555;
+        color: #555; /* Darker icon color */
     }
     .sidebar-menu a:hover {
         background-color: #e6e9ed;
@@ -74,7 +75,7 @@ st.markdown("""
     .sidebar-menu a.active {
         background-color: #e0e6f0;
         color: #1a1a1a;
-        font-weight: bold;
+        font-weight: bold; /* Keep active item bold as it was */
         position: relative;
     }
     .sidebar-menu a.active::before {
@@ -84,7 +85,7 @@ st.markdown("""
         top: 0;
         bottom: 0;
         width: 4px;
-        background-color: #F5F5DC;
+        background-color: #6a0dad;
         border-top-right-radius: 2px;
         border-bottom-right-radius: 2px;
     }
@@ -280,7 +281,7 @@ st.markdown("""
     }
     .campaign-progress-fill {
         height: 100%;
-        background-color: #F5F5DC;
+        background-color: #6a0dad;
         border-radius: 5px;
     }
     .campaign-stats {
@@ -303,9 +304,8 @@ st.markdown("""
         }
         .sidebar-container {
             width: 100%;
-            padding: 0;
+            padding: 10px 0;
             margin-bottom: 20px;
-            order: 2; /* Moves sidebar to bottom */
         }
         .sidebar-menu ul {
             display: flex;
@@ -324,7 +324,6 @@ st.markdown("""
         }
         .content-area-container {
             padding-right: 0;
-            order: 1; /* Keeps content first */
         }
         .top-content-area {
             padding: 20px;
@@ -382,25 +381,25 @@ with st.container():
         st.markdown("""
             <div class="top-content-area">
                 <div class="main-logo-text">HAVEN</div>
-                <p class="main-logo-subtitle">Support the projects on HAVEN.</p>
+                <p class="main-logo-subtitle">Support the most popular projects on HAVEN.</p>
         """, unsafe_allow_html=True)
 
-        st.text_input("Search", placeholder="Search campaigns", key="search_bar", label_visibility="hidden")
+        st.text_input("", placeholder="Search campaigns", key="search_bar")
         st.markdown("</div>", unsafe_allow_html=True)
 
         st.markdown("""
             <div class="campaigns-section">
                 <h2>Trending Campaigns</h2>
-                <p class="section-subtitle">Support the projects on HAVEN.</p>
+                <p class="section-subtitle">Support the most popular projects on HAVEN.</p>
                 <div class="campaign-grid">
         """, unsafe_allow_html=True)
 
         campaign_data = [
-            {"name": "ABC", "description": "CAMPAIGN DESCRIPTION", "author": "By XYZ", "funded": 1000, "goal": 50000, "days_left": 15},
-            {"name": "ABC", "description": "CAMPAIGN DESCRIPTION", "author": "By XYZ", "funded": 1000, "goal": 10000, "days_left": 30},
-            {"name": "ABC", "description": "CAMPAIGN DESCRIPTION", "author": "By XYZ", "funded": 1000, "goal": 20000, "days_left": 7},
-            {"name": "ABC", "description": "CAMPAIGN DESCRIPTION", "author": "By XYZ", "funded": 1000, "goal": 18000, "days_left": 60},
-            {"name": "ABC", "description": "CAMPAIGN DESCRIPTION", "author": "By XYZ", "funded": 1000, "goal": 15000, "days_left": 20},
+            {"name": "EcoDrone: AI for Reforestation", "description": "Help us build AI-powered drones that plant trees and monitor forest health. Revolutionizing conservation efforts.", "author": "By GreenFuture Now", "funded": 25000, "goal": 50000, "days_left": 15},
+            {"name": "Echoes of Tomorrow - Indie Sci-Fi Film", "description": "Support our ambitious independent science fiction film exploring themes of memory and identity in a dystopian future.", "author": "By Nova Pictures", "funded": 75000, "goal": 100000, "days_left": 30},
+            {"name": "The Art Hive: Community Art Space", "description": "We are creating a vibrant, accessible art studio and gallery space for everyone in our community.", "author": "By Local Artists Collective", "funded": 10000, "goal": 20000, "days_left": 7},
+            {"name": "Melody Weaver - Debut Album", "description": "Help me record and release my debut folk-pop album, filled with heartfelt stories and enchanting melodies.", "author": "By Seraphina Moon", "funded": 3000, "goal": 18000, "days_left": 60},
+            {"name": "ReThread: Sustainable Fashion Line", "description": "Launching a new line of clothing made entirely from recycled materials and ethical practices.", "author": "By EarthWear Designs", "funded": 5000, "goal": 15000, "days_left": 20},
         ]
 
         for campaign in campaign_data:
